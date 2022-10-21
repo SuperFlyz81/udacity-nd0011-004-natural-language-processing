@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <!-- Head and metadata -->
+  <head>
+    <meta charset="utf-8"/>
+    <title>Sentiment Analyser</title>
+    <meta name="description" content="Natural Language Processing Sentiment Analyser"/>
+    <meta name="author" content="Pieter Smith"/>
+    <meta name="keywords" content="Natural Language Processing, Sentiment Analyser"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/> <!-- For details on what this viewport meta tag and its related values do, see https://www.w3schools.com/css/css_rwd_viewport.asp -->
+    <meta name="theme-color" content="#654ea3" /> <!-- Sets the color of the header bar and address bar in Android mobile browsers. -->
+
+    <!-- Use fonts from Google Fonts - https://fonts.google.com/ -->
+    <!-- Roboto for all body and element text, Sarpanch for titles. -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Sarpanch&display=swap" rel="stylesheet">
+
+    <!-- My external style sheets -->
+    <!-- Uncomment the minified main.css stylesheet line below when deploying to production.
+    And then comment out the the "slow performing" inline stylesheets imports in the /src/client/index.js file when deploying to production.
+    This will mean that the minified, "better performing" main.css file will be used for production.
+    Side note: main.css is not available/built when WebPack is running in development mode, so inline stylesheets have to be used in development mode. 
+    These inline stylesheets also works when Webpack is run in production mode, but the minified stylesheet below is preferred for production from a performance point of view. -->
+    <!-- <link rel="stylesheet" href="/main.css"> -->
+  </head>
+
+    <!-- Body -->
+    <body class="box1">
+      <!-- Page container grid -->
+      <div id="page-container" class="box2">
+
+        <!-- Header -->
+        <div id="header-container" class="box3">
+        <!-- SVG logo taken from https://www.svgrepo.com/svg/172359/goofy and used under creative commons license. -->
+          <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 490 490" style="enable-background:new 0 0 490 490;" xml:space="preserve" width="64" height="64">
+            <g>
+              <path fill="#654ea3" d="M153.05,302.033h36.861v29.174c0,30.341,24.673,55.014,55.014,55.014c30.341,0,55.014-24.673,55.014-55.014v-29.174H336.8 v-30.625H153.05V302.033z M269.315,331.208c0,13.443-10.946,24.389-24.389,24.389s-24.389-10.946-24.389-24.389v-29.174h48.779 V331.208z"/>
+              <circle fill="#654ea3" cx="165.72" cy="175.209" r="42.642"/>
+              <polygon fill="#654ea3" points="350.259,119.719 264.769,175.212 350.273,230.689 366.932,204.999 321.024,175.212 366.947,145.409 	"/>
+              <path fill="#654ea3" d="M420.914,0H69.086C30.999,0,0,30.999,0,69.086v351.829C0,459.001,30.999,490,69.086,490h351.829 C459.001,490,490,459.001,490,420.914V69.086C490,30.999,459.001,0,420.914,0z M459.375,420.914 c0,21.204-17.257,38.461-38.461,38.461H69.086c-21.204,0-38.461-17.257-38.461-38.461V69.086c0-21.204,17.257-38.461,38.461-38.461 h351.829c21.204,0,38.461,17.257,38.461,38.461V420.914z"/>
+            </g>
+          </svg>
+          <span id="header-text" class="box4">Sentiment Analyser</span>
+        </div>
+
+        <!-- Content -->
+        <div id="content-container" class="box3">
+          <form id="content-form" class="box4" onsubmit="return Client.handleSubmit(event)">
+            <input id="url" class="box5" type="text" name="input" autofocus="autofocus" placeholder="URL to analyse">
+            <input id="submit" class="box5" type="submit" value="Analyse" onclick="return Client.handleSubmit(event)" onsubmit="return handleSubmit(event)">
+          </form>
+          <div id="results" class="box3"></div>
+        </div>
+
+        <!-- Footer -->
+        <div id="footer-container" class="box3">
+          Copyright © 2022 - Pieter Smith
+        </div>
+      </div>
+
+      <script>
+        // Check that service workers are supported.
+        if ('serviceWorker' in navigator) {
+          // Use the window load event to keep the page load performant.
+          window.addEventListener('load', () => {
+            navigator.serviceWorker.register('/service-worker.js');
+          });
+        }
+       </script>
+  </body>
+</html>

@@ -1,0 +1,57 @@
+/*
+Content CSS styles
+*/
+#content-container {
+  grid-area: main-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: top;
+  margin: 16px;
+}
+
+#content-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 3rem;
+  width: 100%;
+}
+
+#url {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1rem;
+  width: 40%;
+  min-width: 284px;
+  padding: 1rem;
+  margin: 1rem 0 1rem 0;
+  border-radius: 2rem;
+  border-color: var(--primary);
+  border-width: 2px;
+}
+
+#url:focus {
+  outline-color: var(--primary);
+}
+
+#submit {
+  /* First two CSS rules below centers the button on the page. */
+  display: block;
+  margin: 0 auto;
+  font-family: 'Roboto', sans-serif;
+  font-size: 0.875rem;
+  padding: 0.5rem 1rem 0.5rem 1rem;
+  border-radius: 0.5rem;
+  color: var(--on-primary);
+  font-weight: bold;
+  background-color: var(--primary);
+  border-width: 0;
+}
+
+#submit:focus {
+  outline-color: var(--inverse-primary);
+}
+
+#results {
+  text-align: center;
+}

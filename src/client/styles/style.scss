@@ -1,0 +1,43 @@
+/*
+Global CSS styles
+*/
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--background);
+  color: var(--secondary);
+  font-family: 'Roboto', sans-serif;
+}
+
+#page-container {
+  display: grid;
+  grid-template-columns: 100%; /* Grid with one column. */
+  grid-template-rows: min-content auto 32px; /* And three rows. */
+  grid-template-areas:
+  "header"
+  "main-content"
+  "footer";
+  min-height: 100vh; /* Important CSS rule. The "min-height: 100vh" rule stretches your page containter to always fill the entire height of your viewport. */
+}
+
+/* IMPORTANT - Change all the 0px border width values below to 1px to see all your grid and flex boxes.
+This is very handy for element positioning and alignment. */
+.box1 {
+  border: 0px solid yellow;
+}
+
+.box2 {
+  border: 0px solid red;
+}
+
+.box3 {
+  border: 0px solid green;
+}
+
+.box4 {
+  border: 0px solid blue;
+}
+
+.box5 {
+  border: 0px solid cyan;
+}

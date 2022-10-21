@@ -1,0 +1,54 @@
+/*
+Theme CSS styles
+*/
+/*
+    Using the CSS variables (part of CSS custom properties) as documented here:
+    https://developer.mozilla.org/en-US/docs/Web/CSS/--*
+
+    Theme colors obtained from Google's Meterial Design 3 Theme Builder here:
+    https://material-foundation.github.io/material-theme-builder/#/custom
+
+    Basic implementation of CSS variables:
+        In CSS, you can declare your variables in the root block:
+        :root {
+        --main-bg-color: #1596A7;
+        }
+
+        And implement it using with the var() method:
+        .panel-header {
+            background: var(--main-bg-color);
+            color: ...
+    }
+*/
+
+:root {
+  --primary: #654ea3;
+  --on-primary: #ffffff;
+  --primary-container: #e9ddff;
+  --on-primary-container: #22005d;
+  --secondary: #625b71;
+  --on-secondary: #ffffff;
+  --secondary-container: #e8def8;
+  --on-secondary-container: #1e192b;
+  --tertiary: #7e5260;
+  --on-tertiary: #ffffff;
+  --tertiary-container: #ffd9e3;
+  --on-tertiary-container: #31101d;
+  --error: #ba1a1a;
+  --error-container: #ffdad6;
+  --on-error: #ffffff;
+  --on-error-container: #410002;
+  --background: #fffbff;
+  --on-background: #1c1b1e;
+  --surface: #fffbff;
+  --on-surface: #1c1b1e;
+  --surface-variant: #e7e0ec;
+  --on-surface-variant: #49454e;
+  --outline: #7a757f;
+  --inverse-on-surface: #f4eff4;
+  --inverse-surface: #313033;
+  --inverse-primary: #cfbdff;
+  --shadow: #000000;
+  --surface-tint: #654ea3;
+  --surface-tint-color: #654ea3;
+}
